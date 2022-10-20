@@ -1,0 +1,23 @@
+[
+    {
+        "identifier": "1",
+        "task creator": "TeQuavion",
+        "task claimer": "Picard",
+        "task description": "Touch Grass",
+        "task state":"claimed"
+    },
+    {
+        "identifier": "2",
+        "task creator": "Bob",
+        "task claimer": "Jone",
+        "task description": "Play Games",
+        "task state":"finished"
+    },
+    {
+        "identifier": "3",
+        "task creator": "Autumn",
+        "task claimer": "Foes",
+        "task description": "Go To Lecture",
+        "task state":"Unfinished"
+    }
+]
