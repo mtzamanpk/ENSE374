@@ -1,0 +1,40 @@
+lists =
+[
+    
+    {
+        ID: 1,
+        creator: "Muhammad",
+        claimer: "Patrick",
+        text: "Gaming",
+        state:
+        {
+            claimed: true,
+            unfinished: false,
+            finished: false,
+        }
+    },
+    {
+        ID: 2,
+        creator: "David",
+        claimer: "Denis",
+        text: "being an honest mistake",
+        state:
+        {
+            claimed: false,
+            unfinished: false,
+            finished: true,
+        }
+    },
+    {
+        ID: 3,
+        creator: "Michael",
+        claimer: "Kenan",
+        text: "throwing basketball",
+        state:
+        {
+            claimed: false,
+            unfinished: true,
+            finished: false,
+        }
+    }
+]
