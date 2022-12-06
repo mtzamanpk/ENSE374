@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <% for(let taskItems of itemList){%>
+            <% if(taskItems.isTaskClaimed === false){%> 
+                <form action="/claim" method="post">
+                <div class="input-group mb-3">
+                    <input hidden name="id" value="<%=taskItems._id %> ">  
+                    <input type="text" disabled class="form-control" placeholder='<%=taskItems.text%>' aria-label="Text input with checkbox">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2" >Claim</button>
+                </div>
+            </form>
+                <%}%>
+            <% if(taskItems.isTaskClaimed === true && taskItems.isTaskDone === false){%> 
+                    <form action="/abandon" method="post">
+                    <div class="input-group mb-3">
+                    <input hidden name="id" value="<%=taskItems._id %>">
+                        <div class="input-group-text">
+                        <input class="form-check-input mt-0" type="checkbox" name="check" value="on" onChange="this.form.submit()" aria-label="Checkbox for following text input">
+                        </div>
+                        <input type="text" disabled class="form-control" placeholder='<%= taskItems.text %>' aria-label="Text input with checkbox">
+                        <button class="btn btn-outline-secondary" name="submitbutton" value="on" type="submit" id="button-addon2">Abandon</button>
+                    </div>
+                    </form>
+            <%}%>
+            <% if(taskItems.isTaskClaimed === true && taskItems.isTaskDone === true){%> 
+                <form action="/unfinish" method="post">
+                <div class="input-group mb-3">
+                <input hidden name="id" value="<%=taskItems._id %>">
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                    <input class="form-check-input mt-0" checked checkbox type="checkbox" onChange="this.form.submit()" aria-label="Checkbox for following text input">
+                    </div>
+                    <input type="text" disabled class="form-control underline" placeholder='<%= taskItems.text %>' aria-label="Text input with checkbox">
+                </div>
+                </div>
+                </form>
+        <%}%>
+                <!--div class="input-group mb-3">
+                    <input type="text" disabled class="form-control" placeholder="tasks" aria-label="Text input with checkbox">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Claim</button>
+                </div-->
+        <%}%>
+</body>
+</html>
